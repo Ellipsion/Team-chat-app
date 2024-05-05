@@ -17,4 +17,4 @@ A team chat application like discord or slack with multiple servers and channels
 * [X] Setup prisma + Postgres
 * [X] Create initial prisma schema
 * [ ] Create server form + modal
-* [ ] Uploadthing setup
+* [X] Uploadthing setup
