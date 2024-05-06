@@ -4,6 +4,7 @@ import { z } from "zod";
 import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 
 import {
   Form,
@@ -18,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { UploadDropzone } from "@/components/uploadthing";
 import ServerImageUpload from "@/components/custom/server/server-image-upload";
+import { useRouter } from "next/navigation";
 
 interface ServerFormProps {}
 
@@ -30,18 +32,27 @@ const formSchema = z.object({
   }),
 });
 
+type formType = z.infer<typeof formSchema>;
+
 const ServerForm: FC<ServerFormProps> = ({}) => {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const router = useRouter();
+
+  const form = useForm<formType>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: formType) {
+    try {
+      const res = await axios.post("/api/servers", values);
+      console.log(res);
+      router.refresh();
+      // TODO: add a success toast
+    } catch (error) {
+      // TODO: add a failure toast
+    }
   }
 
   return (
@@ -70,7 +81,7 @@ const ServerForm: FC<ServerFormProps> = ({}) => {
                 </FormLabel>
                 <FormControl>
                   <Input
-                    className="bg-gray-600  focus-visible:ring-indigo-500 focus-visible:ring-1 focus-visible:ring-offset-0"
+                    className="dark:bg-gray-600 bg-gray-200 focus-visible:ring-indigo-500 focus-visible:ring-1 focus-visible:ring-offset-0"
                     placeholder="Enter server name"
                     {...field}
                   />

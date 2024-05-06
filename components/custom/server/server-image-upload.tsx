@@ -1,5 +1,4 @@
-import { UploadButton, UploadDropzone } from "@/components/uploadthing";
-import { cn } from "@/lib/utils";
+import { UploadDropzone } from "@/components/uploadthing";
 import { X } from "lucide-react";
 import Image from "next/image";
 import { FC } from "react";
@@ -29,8 +28,7 @@ const ServerImageUpload: FC<ServerImageUploadProps> = ({ value, onChange }) => {
     <div className="">
       <UploadDropzone
         appearance={{
-          button:
-            "ut-ready:bg-zinc-500 h-8 text-sm ut-uploading:cursor-not-allowed bg-blue-500",
+          button: "h-8 text-sm ut-uploading:cursor-not-allowed bg-blue-500",
           container: "dark:border-gray-500 p-5 ",
         }}
         endpoint="serverImage"
