@@ -42,7 +42,7 @@ body,
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
+    --background: 223 7% 21%;
     --foreground: 60 9.1% 97.8%;
 
     --card: 20 14.3% 4.1%;
@@ -51,10 +51,10 @@ body,
     --popover: 20 14.3% 4.1%;
     --popover-foreground: 60 9.1% 97.8%;
 
-    --primary: 60 9.1% 97.8%;
+    --primary: 0 0% 98%;
     --primary-foreground: 24 9.8% 10%;
 
-    --secondary: 12 6.5% 15.1%;
+    --secondary: 225 6% 13%;
     --secondary-foreground: 60 9.1% 97.8%;
 
     --muted: 12 6.5% 15.1%;
