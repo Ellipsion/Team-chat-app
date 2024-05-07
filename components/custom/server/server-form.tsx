@@ -21,7 +21,9 @@ import { UploadDropzone } from "@/components/uploadthing";
 import ServerImageUpload from "@/components/custom/server/server-image-upload";
 import { useRouter } from "next/navigation";
 
-interface ServerFormProps {}
+interface ServerFormProps {
+  close?: () => void;
+}
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -34,7 +36,7 @@ const formSchema = z.object({
 
 type formType = z.infer<typeof formSchema>;
 
-const ServerForm: FC<ServerFormProps> = ({}) => {
+const ServerForm: FC<ServerFormProps> = ({ close }) => {
   const router = useRouter();
 
   const form = useForm<formType>({
@@ -49,6 +51,8 @@ const ServerForm: FC<ServerFormProps> = ({}) => {
       const res = await axios.post("/api/servers", values);
       console.log(res);
       router.refresh();
+      router.push(`/servers/${res.data.server.id}`);
+      close && close();
       // TODO: add a success toast
     } catch (error) {
       // TODO: add a failure toast
@@ -63,7 +67,7 @@ const ServerForm: FC<ServerFormProps> = ({}) => {
             control={form.control}
             name="imageUrl"
             render={({ field }) => (
-              <FormItem className="px-5">
+              <FormItem className="px-2">
                 <FormControl>
                   <ServerImageUpload {...field} />
                 </FormControl>
@@ -75,7 +79,7 @@ const ServerForm: FC<ServerFormProps> = ({}) => {
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem className="px-5">
+              <FormItem className="px-2">
                 <FormLabel className="uppercase text-xs text-zinc-500 dark:text-secondary-foreground/70 font-bold">
                   server name
                 </FormLabel>
@@ -93,7 +97,7 @@ const ServerForm: FC<ServerFormProps> = ({}) => {
               </FormItem>
             )}
           />
-          <div className="w-full p-5">
+          <div className="w-full p-2">
             <Button type="submit" variant={"primary"} className="w-full">
               Submit
             </Button>
