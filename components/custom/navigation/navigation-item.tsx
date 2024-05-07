@@ -37,8 +37,8 @@ const NavigationItem: FC<NavigationItemProps> = ({ id, imageUrl, name }) => {
           />
           <div
             className={cn(
-              "relative group flex mx-3 h-12 w-12 rounded-3xl group-hover:rounded-2xl transition-all overflow-hidden",
-              isActive && "bg-primary/10 text-primary rounded-2xl"
+              "relative group flex mx-3 h-12 w-12 rounded-3xl bg-primary/10 group-hover:rounded-2xl transition-all overflow-hidden",
+              isActive && "bg-primary/20 text-primary rounded-2xl"
             )}
           >
             <Image fill src={imageUrl} alt="Channel" />

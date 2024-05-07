@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from "react";
 interface ServerDetailPageProps {}
 
 const ServerDetailPage: FC<ServerDetailPageProps> = ({}) => {
-  return <div></div>;
+  return <div>server detail</div>;
 };
 
 export default ServerDetailPage;

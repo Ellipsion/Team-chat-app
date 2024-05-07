@@ -50,8 +50,8 @@ const ServerForm: FC<ServerFormProps> = ({ close }) => {
     try {
       const res = await axios.post("/api/servers", values);
       console.log(res);
-      router.refresh();
       router.push(`/servers/${res.data.server.id}`);
+      router.refresh();
       close && close();
       // TODO: add a success toast
     } catch (error) {
