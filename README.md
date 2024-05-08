@@ -5,6 +5,7 @@ A team chat application like discord or slack with multiple servers and channels
 ### Tech stack
 
 * Next.js
+* Typescript
 * Shadcn UI
 * Prisma
 * Postgres
@@ -18,6 +19,9 @@ A team chat application like discord or slack with multiple servers and channels
 * [X] Create initial prisma schema
 * [X] Create server form + modal
 * [X] Uploadthing setup
-* [ ] Sidebar and layout
+* [X] Sidebar and layout
+* [X] Server side bar header
+* [ ] Server side bar search
+* [ ] Server side bar items
 * [ ] Server page
 * [ ] Server invite modal
