@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "react-hot-toast";
 
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
@@ -22,6 +23,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className} suppressHydrationWarning>
+          <Toaster />
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
