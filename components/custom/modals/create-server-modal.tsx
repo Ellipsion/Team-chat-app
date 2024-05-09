@@ -14,10 +14,14 @@ import ServerForm from "@/components/custom/server/server-form";
 
 interface CreateServerModalProps {
   children: ReactNode;
+  defaultOpen?: boolean;
 }
 
-const CreateServerModal: FC<CreateServerModalProps> = ({ children }) => {
-  const [open, setOpen] = useState(false);
+const CreateServerModal: FC<CreateServerModalProps> = ({
+  children,
+  defaultOpen,
+}) => {
+  const [open, setOpen] = useState(defaultOpen || false);
 
   const closeModal = () => setOpen(false);
 

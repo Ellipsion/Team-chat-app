@@ -24,7 +24,7 @@ const NavigationItem: FC<NavigationItemProps> = ({ id, imageUrl, name }) => {
   return (
     <button
       onClick={changeRoute}
-      className="group relative flex items-center mb-3"
+      className="group relative flex items-center mb-3 active:translate-y-[1px]"
     >
       <ActionTooltip side="right" align="center" label={name}>
         <>

@@ -3,13 +3,15 @@ import { FC } from "react";
 import ActionTooltip from "@/components/custom/common/action-tooltip";
 import CreateServerModal from "../modals/create-server-modal";
 
-interface NavigationActionProps {}
+interface NavigationActionProps {
+  defaultOpen: boolean;
+}
 
-const NavigationAction: FC<NavigationActionProps> = ({}) => {
+const NavigationAction: FC<NavigationActionProps> = ({ defaultOpen }) => {
   return (
     <div>
       <ActionTooltip side="right" align="center" label="Add a server">
-        <CreateServerModal>
+        <CreateServerModal defaultOpen={defaultOpen}>
           <button className="group flex items-center">
             <div
               className="

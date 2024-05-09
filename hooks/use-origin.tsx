@@ -13,9 +13,9 @@ export const useOrigin = () => {
     return null;
   }
 
-  if (process.env.NODE_ENV === "development") {
-    return "localhost";
-  }
+  // if (process.env.NODE_ENV === "development") {
+  //   return "localhost";
+  // }
 
   return origin;
 };

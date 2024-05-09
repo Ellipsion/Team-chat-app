@@ -5,7 +5,6 @@ import { FC, ReactNode, useState } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -73,7 +72,7 @@ const InviteModal: FC<InviteModalProps> = ({ children }) => {
               onClick={onCopy}
               size={"sm"}
               variant={"primary"}
-              className={cn("h-8 w-20 rounded px-5")}
+              className={cn("h-8 w-20 rounded px-5", copied && "animate-pulse")}
             >
               {copied ? <CheckCheck /> : <>Copy</>}
             </Button>
