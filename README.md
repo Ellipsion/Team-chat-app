@@ -25,3 +25,4 @@ A team chat application like discord or slack with multiple servers and channels
 * [ ] Server side bar items
 * [ ] Server page
 * [X] Server invite modal
+* [X] Manage members modal + api
