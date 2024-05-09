@@ -32,7 +32,7 @@ const ServerDetailLayout: FC<ServerDetailLayoutProps> = async ({
   });
 
   if (!server) {
-    return notFound();
+    return redirect("/");
   }
 
   return (

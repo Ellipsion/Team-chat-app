@@ -24,15 +24,10 @@ interface InviteModalProps {
 
 const InviteModal: FC<InviteModalProps> = ({ children }) => {
   const origin = useOrigin();
-  const {
-    isOpen,
-    type,
-    closeModal,
-    data: { server },
-  } = useModal();
+  const { isOpen, type, closeModal, data } = useModal();
 
   const isModalOpen = isOpen && type == "invite";
-
+  const server = data?.server;
   const [copied, setCopied] = useState(false);
 
   // TODO: generate new invite link

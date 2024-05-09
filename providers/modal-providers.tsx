@@ -1,6 +1,7 @@
 "use client";
 
 import InviteModal from "@/components/custom/modals/invite-modal";
+import ManageMembersModal from "@/components/custom/modals/manage-members-modal";
 import { useEffect, useState } from "react";
 
 export const ModalProvider = () => {
@@ -17,6 +18,7 @@ export const ModalProvider = () => {
   return (
     <>
       <InviteModal />
+      <ManageMembersModal />
     </>
   );
 };
